@@ -1,0 +1,1113 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio profissional de Francisco Sauder Pereira. Analista de TI com experiência em Business Intelligence, IoT, Power BI, Grafana, PostgreSQL e desenvolvimento tecnológico.">
+    <meta name="author" content="Francisco Sauder Pereira">
+
+    <title>Francisco Sauder Pereira | Portfólio Profissional</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --background: #0b1120;
+            --surface: #111c30;
+            --surface-light: #18263d;
+            --primary: #38bdf8;
+            --text: #f1f5f9;
+            --muted: #a1afc2;
+            --border: #26364e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* NAVEGAÇÃO */
+
+        nav {
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-content {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            color: var(--primary);
+            font-size: 21px;
+            font-weight: 800;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--muted);
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* APRESENTAÇÃO */
+
+        header {
+            padding: 95px 0 85px;
+            background:
+                radial-gradient(circle at 85% 20%, #12304c 0, transparent 35%),
+                var(--background);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid #15516c;
+            border-radius: 30px;
+            color: var(--primary);
+            font-size: 12px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero h2 {
+            font-size: 19px;
+            color: var(--muted);
+            font-weight: 500;
+            margin-bottom: 22px;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 15px;
+            margin-bottom: 28px;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 260px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 22px;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 45px rgba(56, 189, 248, .12);
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--primary);
+            color: #071321;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 13px;
+            margin: 5px 8px 5px 0;
+            transition: .3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: #7dd3fc;
+        }
+
+        .button-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        /* SEÇÕES */
+
+        section {
+            padding: 75px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 29px;
+            margin-bottom: 8px;
+        }
+
+        .section-title h2 span {
+            color: var(--primary);
+        }
+
+        .section-title p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .about-text {
+            color: var(--muted);
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        /* HABILIDADES */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .skill {
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            color: #d8e9f7;
+            border-radius: 7px;
+            padding: 9px 15px;
+            font-size: 12px;
+        }
+
+        /* CARDS */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            padding: 25px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .card p, .card li {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .card ul {
+            padding-left: 19px;
+            margin-top: 13px;
+        }
+
+        .card li {
+            margin-bottom: 6px;
+        }
+
+        .project-visual {
+            height: 150px;
+            border-radius: 9px;
+            background: linear-gradient(135deg, #102c48, #142139);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border: 1px solid #29445e;
+            overflow: hidden;
+        }
+
+        .visual-content {
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .visual-content strong {
+            display: block;
+            font-size: 35px;
+        }
+
+        .visual-content span {
+            font-size: 12px;
+        }
+
+        /* EXPERIÊNCIA */
+
+        .timeline {
+            border-left: 2px solid var(--primary);
+            padding-left: 25px;
+            margin-left: 8px;
+        }
+
+        .experience {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .experience::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            left: -32px;
+            top: 8px;
+        }
+
+        .experience h3 {
+            font-size: 18px;
+        }
+
+        .experience h4 {
+            color: var(--primary);
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .experience p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .period {
+            color: #7dd3fc;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* FORMAÇÃO E CURSOS */
+
+        .education {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .education-item {
+            background: var(--surface);
+            padding: 23px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .education-item h3 {
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .education-item p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .course {
+            padding: 17px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+        }
+
+        .course strong {
+            display: block;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .course span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* EVENTOS */
+
+        .events {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .event {
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px 20px;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .event strong {
+            color: var(--primary);
+            display: block;
+            font-size: 18px;
+        }
+
+        .event span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* CONTATO */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 750px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                grid-row: 1;
+            }
+
+            .hero-image img {
+                width: 190px;
+                height: 210px;
+            }
+
+            .grid, .education, .course-list {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            header {
+                padding: 55px 0;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .about-text {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <nav>
+        <div class="container nav-content">
+            <a href="#inicio" class="logo">FS<span>.</span></a>
+
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- APRESENTAÇÃO -->
+
+    <header id="inicio">
+        <div class="container hero">
+
+            <div>
+                <span class="tag">TECNOLOGIA DA INFORMAÇÃO | BI | IoT</span>
+
+                <h1>Francisco Sauder <span>Pereira</span></h1>
+
+                <h2>Analista de TI | Business Intelligence | IoT</h2>
+
+                <p>
+                    Profissional de Tecnologia da Informação com experiência
+                    em desenvolvimento de soluções analíticas, integração
+                    de sistemas, Internet das Coisas, monitoramento de dados
+                    e desenvolvimento tecnológico. Atuação em projetos
+                    voltados ao agronegócio e à indústria, unindo tecnologia,
+                    análise de dados e necessidades de negócio.
+                </p>
+
+                <a href="#projetos" class="button">Conhecer projetos</a>
+                <a href="#contato" class="button button-outline">Entrar em contato</a>
+            </div>
+
+            <div class="hero-image">
+                <img src="./images/fran.jpg"
+                     alt="Foto profissional de Francisco Sauder Pereira">
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- SOBRE MIM -->
+
+        <section id="sobre">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Sobre <span>mim</span></h2>
+                    <p>Minha trajetória e conhecimentos profissionais</p>
+                </div>
+
+                <p class="about-text">
+                    Profissional formado em Análise e Desenvolvimento de
+                    Sistemas, com aproximadamente 3 anos e 6 meses de
+                    experiência na Radek Systems, atuando em pesquisa
+                    científica com bolsa CNPq, estágio e como Analista de TI.
+                    Minha trajetória envolve pesquisa, desenvolvimento,
+                    implantação e suporte de soluções tecnológicas aplicadas
+                    ao agronegócio e à indústria.
+
+                    Possuo experiência em Business Intelligence (BI), análise
+                    e integração de dados, levantamento de requisitos junto
+                    às áreas de negócio e clientes, desenvolvimento de
+                    dashboards, criação e acompanhamento de indicadores
+                    (KPIs), consultas SQL e utilização de PostgreSQL.
+                    Desenvolvi soluções analíticas utilizando Power BI e
+                    Grafana, trabalhando com Power Query, DAX, modelagem
+                    e transformação de dados, além de monitoramento de
+                    informações em tempo real.
+
+                    Também atuei com Internet das Coisas (IoT), configuração
+                    e instalação de sensores e gateways, testes de sistemas
+                    e conectividade, integração de dispositivos por meio de
+                    LoRaWAN, NB-IoT e MQTT, comunicação via satélite e
+                    monitoramento de variáveis ambientais e técnicas.
+
+                    Minha experiência inclui projetos de Inteligência
+                    Artificial e visão computacional, testes de modelos de IA,
+                    análise de logs em ambientes Linux, suporte técnico a
+                    clientes, visitas técnicas, documentação, elaboração de
+                    artigos técnicos e acompanhamento de implantações.
+                    Atualmente, estou cursando pós-graduação em
+                    Desenvolvimento Web Full Stack, ampliando meus
+                    conhecimentos em HTML, CSS e desenvolvimento de
+                    aplicações web.
+                </p>
+
+                <div class="skills">
+                    <span class="skill">Power BI</span>
+                    <span class="skill">Grafana</span>
+                    <span class="skill">PostgreSQL</span>
+                    <span class="skill">SQL</span>
+                    <span class="skill">DAX</span>
+                    <span class="skill">Power Query</span>
+                    <span class="skill">IoT</span>
+                    <span class="skill">MQTT</span>
+                    <span class="skill">LoRaWAN</span>
+                    <span class="skill">NB-IoT</span>
+                    <span class="skill">Linux</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">Inteligência Artificial</span>
+                    <span class="skill">Visão Computacional</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EXPERIÊNCIA PROFISSIONAL -->
+
+        <section id="experiencia">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Experiência <span>profissional</span></h2>
+                    <p>Trajetória profissional na Radek Systems</p>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="experience">
+                        <span class="period">2025 – 2026</span>
+                        <h3>Analista de Tecnologia da Informação</h3>
+                        <h4>Radek Systems</h4>
+
+                        <p>
+                            Atuação no desenvolvimento e acompanhamento de
+                            soluções tecnológicas, análise de dados,
+                            Business Intelligence, integração de sistemas
+                            e monitoramento de dispositivos IoT.
+
+                            Desenvolvimento de dashboards e indicadores
+                            utilizando Power BI e Grafana, consultas e
+                            integração com PostgreSQL, acompanhamento
+                            de KPIs, testes de sistemas, análise de logs
+                            em Linux e identificação de falhas de
+                            conectividade.
+
+                            Participação em projetos de Inteligência
+                            Artificial e visão computacional, testes de
+                            modelos de IA, levantamento de requisitos
+                            junto a clientes, visitas técnicas, suporte
+                            e acompanhamento de implantações.
+                        </p>
+                    </div>
+
+                    <div class="experience">
+                        <span class="period">2025 | 4 meses</span>
+                        <h3>Estagiário de Tecnologia da Informação – IoT</h3>
+                        <h4>Radek Systems</h4>
+
+                        <p>
+                            Atuação em projetos de Internet das Coisas
+                            aplicados ao agronegócio, envolvendo
+                            configuração e instalação de sensores,
+                            integração de dispositivos, testes de
+                            conectividade e comunicação LoRaWAN.
+
+                            Participação no desenvolvimento de dashboards
+                            no Grafana e Power BI, monitoramento de dados
+                            e integração de informações técnicas.
+                            Colaboração na documentação e elaboração
+                            de materiais técnicos dos projetos.
+                        </p>
+                    </div>
+
+                    <div class="experience">
+                        <span class="period">2023 – 2025 | 2 anos e 2 meses</span>
+                        <h3>Bolsista de Pesquisa Científica – CNPq</h3>
+                        <h4>Radek Systems</h4>
+
+                        <p>
+                            Participação em atividades de pesquisa e
+                            desenvolvimento tecnológico com foco em
+                            IoT aplicada à agricultura.
+
+                            Configuração e instalação de sensores,
+                            testes de comunicação e conectividade,
+                            integração de dispositivos utilizando
+                            LoRaWAN e comunicação via satélite,
+                            consultas a bancos de dados e desenvolvimento
+                            de soluções para monitoramento de informações
+                            em tempo real.
+
+                            Participação em projetos de monitoramento
+                            ambiental e desenvolvimento de soluções
+                            tecnológicas para o agronegócio.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS -->
+
+        <section id="projetos">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Projetos e <span>soluções desenvolvidas</span></h2>
+                    <p>
+                        Experiência prática em análise de dados,
+                        monitoramento e desenvolvimento tecnológico.
+                    </p>
+                </div>
+
+                <div class="grid">
+
+                    <article class="card">
+                        <div class="project-visual">
+                            <div class="visual-content">
+                                <strong>BI</strong>
+                                <span>POWER BI | DATA ANALYTICS</span>
+                            </div>
+                        </div>
+
+                        <h3>Dashboard de Monitoramento em Power BI</h3>
+
+                        <p>
+                            Desenvolvimento de dashboards analíticos
+                            utilizando Power BI, com extração de dados
+                            provenientes de bancos PostgreSQL e
+                            integração de informações de sensores IoT
+                            instalados em projetos agrícolas.
+
+                            Utilização de Power Query para transformação
+                            e tratamento de dados, DAX para criação de
+                            medidas e indicadores, modelagem de dados
+                            e construção de visualizações interativas.
+
+                            Desenvolvimento de análises para acompanhamento
+                            de informações técnicas, indicadores
+                            operacionais e variáveis ambientais.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="project-visual">
+                            <div class="visual-content">
+                                <strong>G</strong>
+                                <span>GRAFANA | MONITORAMENTO</span>
+                            </div>
+                        </div>
+
+                        <h3>Dashboard de Monitoramento em Grafana</h3>
+
+                        <p>
+                            Desenvolvimento de dashboards para
+                            monitoramento de dados em tempo real,
+                            utilizando Grafana e integração com
+                            fontes de dados MQTT.
+
+                            Criação de painéis, gráficos, indicadores
+                            e visualizações para acompanhamento de
+                            informações técnicas e operacionais
+                            provenientes de dispositivos IoT.
+
+                            Participação no desenvolvimento de
+                            soluções de monitoramento ambiental
+                            e industrial.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="project-visual">
+                            <div class="visual-content">
+                                <strong>PCB</strong>
+                                <span>INSPEÇÃO | QUALIDADE</span>
+                            </div>
+                        </div>
+
+                        <h3>Monitoramento e Inspeção de PCB</h3>
+
+                        <p>
+                            Desenvolvimento de dashboard no Grafana
+                            para acompanhamento de inspeções de
+                            placas eletrônicas (PCB).
+
+                            Implementação de indicadores de aprovação
+                            e reprovação, total de inspeções, índice
+                            de aprovação e acompanhamento diário
+                            dos resultados.
+
+                            Integração de dados recebidos via MQTT,
+                            construção de indicadores e validação
+                            dos cálculos apresentados nos painéis.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="project-visual">
+                            <div class="visual-content">
+                                <strong>IoT</strong>
+                                <span>AGRONEGÓCIO | SENSORES</span>
+                            </div>
+                        </div>
+
+                        <h3>Monitoramento de Sensores IoT</h3>
+
+                        <p>
+                            Participação em projetos de monitoramento
+                            de temperatura e umidade no transporte
+                            de aves, ovos em incubação e granjas
+                            de suínos.
+
+                            Atuação na configuração, instalação e
+                            integração de sensores, testes de
+                            conectividade, comunicação de dados
+                            e acompanhamento das informações
+                            coletadas em campo.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="project-visual">
+                            <div class="visual-content">
+                                <strong>POC</strong>
+                                <span>LEVANTAMENTO DE REQUISITOS</span>
+                            </div>
+                        </div>
+
+                        <h3>POC de Monitoramento de Suínos – Coopavel</h3>
+
+                        <p>
+                            Participação em visita técnica e levantamento
+                            de requisitos junto ao cliente para definição
+                            de uma Prova de Conceito (POC) voltada ao
+                            monitoramento de suínos.
+
+                            Atuação na identificação das necessidades
+                            operacionais, entendimento do ambiente de
+                            implantação e levantamento de requisitos
+                            para desenvolvimento da solução tecnológica.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="project-visual">
+                            <div class="visual-content">
+                                <strong>AI</strong>
+                                <span>INTELIGÊNCIA ARTIFICIAL</span>
+                            </div>
+                        </div>
+
+                        <h3>Inteligência Artificial e Visão Computacional</h3>
+
+                        <p>
+                            Participação em projetos envolvendo
+                            Inteligência Artificial e visão computacional,
+                            incluindo testes e avaliação de modelos de IA
+                            aplicados a soluções tecnológicas.
+
+                            Atuação em atividades de validação,
+                            acompanhamento de resultados e análise
+                            do comportamento dos modelos em aplicações
+                            de monitoramento e inspeção.
+                        </p>
+                    </article>
+
+                </div>
+
+                <p style="color: #8fa4ba; font-size: 12px; margin-top: 22px;">
+                    Os projetos apresentados descrevem experiências
+                    profissionais. Dados, imagens e informações
+                    confidenciais de empresas e clientes não são
+                    disponibilizados nesta apresentação.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- SUPORTE E TECNOLOGIAS -->
+
+        <section id="suporte">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Suporte técnico e <span>tecnologias</span></h2>
+                    <p>Atuação técnica, integração e acompanhamento de soluções</p>
+                </div>
+
+                <div class="grid">
+
+                    <article class="card">
+                        <h3>Suporte e infraestrutura tecnológica</h3>
+
+                        <p>
+                            Experiência em configuração, instalação
+                            e acompanhamento de dispositivos IoT,
+                            sensores e gateways com conexão 4G.
+
+                            Realização de testes de funcionamento,
+                            conectividade e comunicação entre
+                            dispositivos, identificação de falhas,
+                            análise de logs em servidores Linux
+                            e suporte técnico a projetos e clientes.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Integração de sistemas e comunicação</h3>
+
+                        <p>
+                            Integração de sensores e dispositivos
+                            utilizando protocolos e tecnologias
+                            de comunicação LoRaWAN, NB-IoT e MQTT,
+                            além de soluções de comunicação via
+                            satélite.
+
+                            Experiência com consultas e integração
+                            a bancos PostgreSQL, acompanhamento
+                            de transmissão de dados e monitoramento
+                            de informações em tempo real.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Levantamento de requisitos e clientes</h3>
+
+                        <p>
+                            Participação em visitas técnicas,
+                            levantamento de requisitos e identificação
+                            de necessidades junto a clientes e áreas
+                            de negócio.
+
+                            Apoio na definição de soluções, documentação
+                            técnica, acompanhamento de implantações
+                            e elaboração de relatórios.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Documentação e produção técnica</h3>
+
+                        <p>
+                            Elaboração de artigos técnicos,
+                            documentações de projetos, relatórios
+                            de atividades e registros de procedimentos
+                            relacionados às tecnologias utilizadas
+                            e às soluções desenvolvidas.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENTOS -->
+
+        <section id="eventos">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Eventos e <span>participações</span></h2>
+                    <p>
+                        Participação em feiras e eventos de tecnologia
+                        e agronegócio representando a startup.
+                    </p>
+                </div>
+
+                <div class="events">
+                    <div class="event">
+                        <strong>2024</strong>
+                        <span>Show Rural Coopavel</span>
+                    </div>
+
+                    <div class="event">
+                        <strong>2025</strong>
+                        <span>Show Rural Coopavel</span>
+                    </div>
+
+                    <div class="event">
+                        <strong>2026</strong>
+                        <span>Show Rural Coopavel</span>
+                    </div>
+                </div>
+
+                <p style="color: var(--muted); font-size: 13px; margin-top: 20px;">
+                    Participação em feiras e eventos representando
+                    a startup, com contato com soluções tecnológicas,
+                    inovação e aplicações de IoT no agronegócio.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- FORMAÇÃO -->
+
+        <section id="formacao">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Formação <span>acadêmica</span></h2>
+                    <p>Graduação e especialização</p>
+                </div>
+
+                <div class="education">
+
+                    <div class="education-item">
+                        <h3>Análise e Desenvolvimento de Sistemas</h3>
+                        <p>UNIVEL – Centro Universitário</p>
+                        <p>2023 – 2025</p>
+                        <p><strong>Grau:</strong> Graduação completa</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>Desenvolvimento Web Full Stack</h3>
+                        <p>UNOPAR – Pós-graduação</p>
+                        <p>2026 – 2027</p>
+                        <p><strong>Grau:</strong> Em andamento</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CURSOS -->
+
+        <section id="cursos">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Cursos <span>complementares</span></h2>
+                    <p>Capacitações e conhecimentos adicionais</p>
+                </div>
+
+                <div class="course-list">
+
+                    <div class="course">
+                        <strong>Informática Microsoft e Linux</strong>
+                        <span>Master Cursos | 2014 – 2015</span>
+                        <span> Aproximadamente 208 horas (estimativa)</span>
+                    </div>
+
+                    <div class="course">
+                        <strong>Implementando Banco de Dados</strong>
+                        <span>Fundação Bradesco | 2024</span>
+                        <span>Aprovado | Nota: 80%</span>
+                    </div>
+
+                    <div class="course">
+                        <strong>Linguagem de Programação Python – Básico</strong>
+                        <span>Fundação Bradesco | 2023</span>
+                        <span>Aprovado | Nota: 80%</span>
+                    </div>
+
+                    <div class="course">
+                        <strong>Projetos de Sistemas de TI</strong>
+                        <span>Fundação Bradesco | 2023</span>
+                        <span>Aprovado | Nota: 70%</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+
+        <section id="contato">
+            <div class="container contact">
+
+                <div class="section-title">
+                    <h2>Vamos nos <span>conectar?</span></h2>
+                    <p>Entre em contato para oportunidades profissionais e projetos.</p>
+                </div>
+
+                <p>
+                    Aberto a oportunidades nas áreas de Tecnologia da
+                    Informação, BI, Dados, IoT, Sistemas e Desenvolvimento,
+                    especialmente em posições remotas.
+                </p>
+
+                <a href="https://www.linkedin.com/in/franciscosauderpereira/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="button">
+                    LinkedIn
+                </a>
+
+                <a href="https://wa.me/5545999897535?text=Oi!%20Vi%20seu%20contato%20e%20queria%20conversar."
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="button button-outline">
+                    WhatsApp
+                </a>
+
+                <a href="https://github.com/franciscosauder"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="button button-outline">
+                    GitHub
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            © 2026 Francisco Sauder Pereira.
+            Portfólio Profissional | Tecnologia da Informação.
+        </p>
+    </footer>
+
+</body>
+</html>
